@@ -232,7 +232,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d60e69ae3ab906408d36a1aa4efd1df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backGroundMaterial:
+  - {fileID: 2100000, guid: c73f781fc700f3148b216a359d9950cf, type: 2}
+  - {fileID: 2100000, guid: ad84d79b5b1398049979e2f4843c5a10, type: 2}
+  - {fileID: 2100000, guid: 89b0cfddc14b64f40b57e8234db161cc, type: 2}
   speed: 0.1
+  distance: 0
+  secondDistance: 5
+  thirdDistance: 10
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
