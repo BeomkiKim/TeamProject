@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BackGroundCtrl : MonoBehaviour
+public class bg : MonoBehaviour
 {
     MeshRenderer meshRender;
     public Material[] backGroundMaterial;
@@ -10,6 +10,8 @@ public class BackGroundCtrl : MonoBehaviour
 
     public float speed;
     float offset;
+
+    public GameObject[] stageBackGround;
 
     [Header("플레이어거리")]
     public float distance = 0f;
@@ -29,21 +31,26 @@ public class BackGroundCtrl : MonoBehaviour
 
     void Update()
     {
-        offset += Time.deltaTime * speed;
         distance += Time.deltaTime;
-        meshRender.material.mainTextureOffset = new Vector2(offset, 0);
 
-        if(distance >= secondDistance)
+        if (distance >= secondDistance && distance < thirdDistance)
         {
+
             backGroundRederer.sharedMaterial = backGroundMaterial[1];
             offset += Time.deltaTime * speed;
             meshRender.material.mainTextureOffset = new Vector2(offset, 0);
         }
-        if(distance >= thirdDistance)
+        else if (distance >= thirdDistance)
         {
             backGroundRederer.sharedMaterial = backGroundMaterial[2];
             offset += Time.deltaTime * speed;
             meshRender.material.mainTextureOffset = new Vector2(offset, 0);
         }
+        else
+        {
+            offset += Time.deltaTime * speed;
+            meshRender.material.mainTextureOffset = new Vector2(offset, 0);
+        }
+
     }
 }
