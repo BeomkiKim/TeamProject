@@ -15,6 +15,6 @@ public class RigCamera : MonoBehaviour
 
     void Rigging()
     {
-        this.gameObject.transform.position = new Vector3(character.transform.position.x, character.transform.position.y, -10);
+        this.gameObject.transform.position = new Vector3(character.transform.position.x, 0, -10);
     }
 }
