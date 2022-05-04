@@ -27,4 +27,5 @@ public class CharacterCollider : MonoBehaviour
             CharacterManager.instance.SetIs_Ground(false);
         }
     }
+
 }
