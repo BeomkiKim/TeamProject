@@ -8,6 +8,8 @@ public class bg : MonoBehaviour
     public Material[] backGroundMaterial;
     Renderer backGroundRederer;
 
+    public Transform cameraTransform;
+
     public float speed;
     float offset;
 
@@ -31,6 +33,9 @@ public class bg : MonoBehaviour
 
     void Update()
     {
+        Vector2 backGround =cameraTransform.position;
+        transform.position = backGround;
+
         distance += Time.deltaTime;
 
         if (distance >= secondDistance && distance < thirdDistance)
