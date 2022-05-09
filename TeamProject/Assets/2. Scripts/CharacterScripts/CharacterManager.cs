@@ -15,7 +15,7 @@ public class CharacterManager : MonoBehaviour
     public Animator character_Animator;
 
     float jumpPower = 25f;
-    float rushSpeed = 100f;
+    float rushSpeed = 5f;
 
     Vector2 accerlation = new Vector2(0,0);
     Vector2 lastVelocity = new Vector2(0, 0);
@@ -131,7 +131,7 @@ public class CharacterManager : MonoBehaviour
 
     public void Character_Rush()
     {
-        character_Rb.velocity = new Vector3(rushSpeed*Time.deltaTime, character_Rb.velocity.y, 0);
+        character_Rb.velocity = new Vector3(rushSpeed, character_Rb.velocity.y, 0);
     }
 
     public bool GetIs_Ground()
