@@ -16,11 +16,15 @@ public class CharacterManager : MonoBehaviour
 
     float jumpPower = 25f;
     float rushSpeed = 5f;
+    float add_RushSpeed = 0.05f; //초마다 증가 
+    float hurtSpeed;
 
     Vector2 accerlation = new Vector2(0,0);
     Vector2 lastVelocity = new Vector2(0, 0);
     bool is_Ground = true;
     bool is_Jump = false;
+    bool is_Hurt;
+    bool is_HurtSpeed = false;
 
     private static CharacterManager _instance;
 
@@ -56,6 +60,7 @@ public class CharacterManager : MonoBehaviour
     {
         character_Animator = character.GetComponent<Animator>();
         character_Rb = character.GetComponent<Rigidbody2D>();
+        InvokeRepeating("IncreaseSpeed", 1f, 1f);
     }
 
     private void Update()
@@ -63,6 +68,7 @@ public class CharacterManager : MonoBehaviour
         AttackEnding();
         OnJumpInGround();
         HurtEnding();
+        Rushdeceleration();
     }
 
     private void FixedUpdate()
@@ -124,14 +130,44 @@ public class CharacterManager : MonoBehaviour
             is_Jump = false;
         }
 
-        
+    }
 
+    void IncreaseSpeed()
+    {
+        rushSpeed += add_RushSpeed;
+    }
 
+    void Increase_HurtSpeed()
+    {
+        rushSpeed += hurtSpeed/2;
     }
 
     public void Character_Rush()
     {
         character_Rb.velocity = new Vector3(rushSpeed, character_Rb.velocity.y, 0);
+    }
+
+    void Rushdeceleration()
+    {
+        if (is_Hurt == false)
+            return;
+
+        CancelInvoke("IncreaseSpeed");
+
+        if(is_HurtSpeed==false)
+        { 
+            InvokeRepeating("Increase_HurtSpeed", 0.001f, 0.25f);
+            is_HurtSpeed = true;
+        }
+
+        if(rushSpeed >= hurtSpeed * 2)
+        {
+            is_Hurt = false;
+            is_HurtSpeed = false;
+            CancelInvoke("Increase_HurtSpeed");
+            InvokeRepeating("IncreaseSpeed", 1f, 1f);
+        }
+
     }
 
     public bool GetIs_Ground()
@@ -144,6 +180,21 @@ public class CharacterManager : MonoBehaviour
         return is_Jump;
     }
 
+    public float GetRushSpeed()
+    {
+        return rushSpeed;
+    }
+
+    public bool GetIs_Hurt()
+    {
+        return is_Hurt;
+    }
+
+    public float Get_Hurtspeed()
+    {
+        return hurtSpeed;
+    }
+
     public void SetIs_Ground(bool isGround)
     {
         is_Ground = isGround;
@@ -152,6 +203,21 @@ public class CharacterManager : MonoBehaviour
     public void SetIs_Jump(bool isJump)
     {
         is_Jump = isJump;
+    }
+
+    public void SetRushSpeed(float speed)
+    {
+        rushSpeed = speed;
+    }
+
+    public void SetIsHurt(bool isHurting)
+    {
+        is_Hurt = isHurting;
+    }
+
+    public void SetHurtSpeed(float speed)
+    {
+        hurtSpeed = speed;
     }
     
 }

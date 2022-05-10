@@ -4465,7 +4465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2883991241572327410, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2954181336601895002, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_SortingLayer
@@ -4481,7 +4481,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4205543057741363046, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5630825625149524266, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_LocalPosition.x
