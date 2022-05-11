@@ -4,27 +4,29 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
-    [SerializeField] GameObject levelPart_1;
+    [SerializeField] GameObject[] pattern;
     GameObject map;
+    public int patternNum;
 
 
     void SpawnLevelPart(Vector3 spawnPosition)
     {
-        map = Instantiate(levelPart_1, spawnPosition, Quaternion.identity);
+        map = Instantiate(pattern[patternNum], spawnPosition, Quaternion.identity);
+        StartCoroutine(DestoryGround());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")
         {
-            SpawnLevelPart(new Vector3(gameObject.transform.position.x + 25.0f, 0));
-            StartCoroutine(DestoryGround());
+            patternNum = Random.Range(0, pattern.Length);
+            SpawnLevelPart(new Vector3(gameObject.transform.position.x + 43.0f, 0));
         }
     }
 
     IEnumerator DestoryGround()
     {
-        yield return new WaitForSeconds(20f);
+        yield return new WaitForSeconds(30f);
         Destroy(map);
     }
 
