@@ -15,15 +15,16 @@ public class CharacterManager : MonoBehaviour
     public Animator character_Animator;
 
     float jumpPower = 25f;
-    float rushSpeed = 5f;
+    public float rushSpeed = 5f;
     float add_RushSpeed = 0.05f; //초마다 증가 
-    float hurtSpeed;
+    public float hurtSpeed;
+    public float presentRushSpeed;
 
     Vector2 accerlation = new Vector2(0,0);
     Vector2 lastVelocity = new Vector2(0, 0);
     bool is_Ground = true;
     bool is_Jump = false;
-    bool is_Hurt;
+    public bool is_Hurt;
     bool is_HurtSpeed = false;
 
     private static CharacterManager _instance;
@@ -139,7 +140,7 @@ public class CharacterManager : MonoBehaviour
 
     void Increase_HurtSpeed()
     {
-        rushSpeed += hurtSpeed/2;
+        rushSpeed += hurtSpeed/3;
     }
 
     public void Character_Rush()
@@ -152,6 +153,9 @@ public class CharacterManager : MonoBehaviour
         if (is_Hurt == false)
             return;
 
+        if (presentRushSpeed == 0)
+            return;
+
         CancelInvoke("IncreaseSpeed");
 
         if(is_HurtSpeed==false)
@@ -160,8 +164,9 @@ public class CharacterManager : MonoBehaviour
             is_HurtSpeed = true;
         }
 
-        if(rushSpeed >= hurtSpeed * 2)
+        if(rushSpeed >= presentRushSpeed)
         {
+            Debug.Log("asdf");
             is_Hurt = false;
             is_HurtSpeed = false;
             CancelInvoke("Increase_HurtSpeed");
@@ -195,6 +200,11 @@ public class CharacterManager : MonoBehaviour
         return hurtSpeed;
     }
 
+    public float Get_PresentRushSpeed()
+    {
+        return presentRushSpeed;
+    }
+
     public void SetIs_Ground(bool isGround)
     {
         is_Ground = isGround;
@@ -218,6 +228,11 @@ public class CharacterManager : MonoBehaviour
     public void SetHurtSpeed(float speed)
     {
         hurtSpeed = speed;
+    }
+
+    public void SetPrensentRushSpeed(float speed)
+    {
+        presentRushSpeed = speed;
     }
     
 }
