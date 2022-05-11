@@ -401,7 +401,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: ad84d79b5b1398049979e2f4843c5a10, type: 2}
   - {fileID: 2100000, guid: 89b0cfddc14b64f40b57e8234db161cc, type: 2}
   cameraTransform: {fileID: 519420032}
-  speed: 0.1
+  speed: 0.25
   stageBackGround: []
   distance: 0
   secondDistance: 5
@@ -4067,8 +4067,8 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!19719996 &1072537149
-TilemapCollider2D:
+--- !u!61 &1072537149
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4080,9 +4080,19 @@ TilemapCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0.00001
+  m_Offset: {x: 11.5, y: -4.516949}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 43, y: 0.96610165}
+  m_EdgeRadius: 0
 --- !u!1 &1099300007
 GameObject:
   m_ObjectHideFlags: 0
@@ -4465,7 +4475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2883991241572327410, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2954181336601895002, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_SortingLayer
@@ -4481,7 +4491,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4205543057741363046, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371674907453837387, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5630825625149524266, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_LocalPosition.x

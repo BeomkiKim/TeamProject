@@ -24,7 +24,7 @@ public class LevelGenerator : MonoBehaviour
 
     IEnumerator DestoryGround()
     {
-        yield return new WaitForSeconds(11.5f);
+        yield return new WaitForSeconds(20f);
         Destroy(map);
     }
 
