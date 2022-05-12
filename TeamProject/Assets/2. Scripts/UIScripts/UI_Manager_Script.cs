@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using TMPro;
 
 public class UI_Manager_Script : MonoBehaviour
 {
@@ -36,5 +35,25 @@ public class UI_Manager_Script : MonoBehaviour
     public void HomeButton()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void BgmButton()
+    {
+
+    }
+
+    public void Sound_EffectButton()
+    {
+
+    }
+
+    public void Game_ResetButton()
+    {
+
+    }
+
+    public void BackButton()
+    {
+        SceneManager.LoadScene(1);
     }
 }
