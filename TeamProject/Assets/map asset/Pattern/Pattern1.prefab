@@ -95,7 +95,10 @@ MonoBehaviour:
   pattern:
   - {fileID: 8837476639322564171}
   - {fileID: 8298053415311214499, guid: c6a16cdbdf34cd4469db39e92e979675, type: 3}
-  randNum: 0
+  - {fileID: 5896305557796822004, guid: 6f5dc0e30af19034cbbe2118bcbe06cd, type: 3}
+  - {fileID: 3298165144426573619, guid: aaf4cf3192daf224d9c0f09a1149bb4a, type: 3}
+  - {fileID: 2992746599715366972, guid: 66a7f27b7966ec246af0b8b5ad08dc0f, type: 3}
+  patternNum: 0
 --- !u!1 &8837476639322564171
 GameObject:
   m_ObjectHideFlags: 0
