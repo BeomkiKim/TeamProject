@@ -12,6 +12,8 @@ public class CharacterManager : MonoBehaviour
 
     private Rigidbody2D character_Rb;
 
+    private BoxCollider2D character_collider2D;
+
     public Animator character_Animator;
 
     float jumpPower = 25f;
@@ -19,6 +21,8 @@ public class CharacterManager : MonoBehaviour
     float add_RushSpeed = 0.05f; //초마다 증가 
     public float hurtSpeed;
     public float presentRushSpeed;
+    public float usual_ColliderSizeY;
+    public float usual_ColliderOffsetY;
 
     Vector2 accerlation = new Vector2(0,0);
     Vector2 lastVelocity = new Vector2(0, 0);
@@ -61,6 +65,9 @@ public class CharacterManager : MonoBehaviour
     {
         character_Animator = character.GetComponent<Animator>();
         character_Rb = character.GetComponent<Rigidbody2D>();
+        character_collider2D = character.GetComponent<BoxCollider2D>();
+        usual_ColliderSizeY = character_collider2D.size.y;
+        usual_ColliderOffsetY = character_collider2D.offset.y;
         InvokeRepeating("IncreaseSpeed", 1f, 1f);
     }
 
@@ -80,12 +87,16 @@ public class CharacterManager : MonoBehaviour
     public void OnPointerDown_Slide()
     {
         character_Animator.SetBool("IsSlide", true);
+        character_collider2D.size = new Vector2(character_collider2D.size.x, usual_ColliderSizeY/2);
+        character_collider2D.offset = new Vector2(character_collider2D.offset.x, usual_ColliderOffsetY/2);
         
     }
 
     public void OnPointerUp_Slide()
     { 
         character_Animator.SetBool("IsSlide", false);
+        character_collider2D.size = new Vector2(character_collider2D.size.x, usual_ColliderSizeY);
+        character_collider2D.offset = new Vector2(character_collider2D.offset.x, usual_ColliderOffsetY);
     }
 
     public void onButtonDown_Attack()
