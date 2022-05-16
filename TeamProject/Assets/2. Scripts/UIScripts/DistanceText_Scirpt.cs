@@ -19,7 +19,7 @@ public class DistanceText_Scirpt : MonoBehaviour
 
     public void DistanceText_Renwal()
     {
-        float distance_Shame = character.transform.position.x+7.5f;
+        float distance_Shame = character.transform.position.x+4f;
         int distance_Shame_Int = (int)distance_Shame;
         distance_Text.text = distance_Shame_Int.ToString();
     }

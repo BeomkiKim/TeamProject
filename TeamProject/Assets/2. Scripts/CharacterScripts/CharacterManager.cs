@@ -91,8 +91,11 @@ public class CharacterManager : MonoBehaviour
             return;
 
         character_Animator.SetBool("IsSlide", true);
-        character_collider2D.size = new Vector2(character_collider2D.size.x, usual_ColliderSizeY/2);
-        character_collider2D.offset = new Vector2(character_collider2D.offset.x, usual_ColliderOffsetY/2);
+        if (character_Animator.GetBool("IsSlide") == true)
+        {
+            character_collider2D.size = new Vector2(character_collider2D.size.x, usual_ColliderSizeY / 2);
+            character_collider2D.offset = new Vector2(character_collider2D.offset.x, usual_ColliderOffsetY / 2);
+        }
         
     }
 
@@ -102,8 +105,11 @@ public class CharacterManager : MonoBehaviour
             return;
 
         character_Animator.SetBool("IsSlide", false);
-        character_collider2D.size = new Vector2(character_collider2D.size.x, usual_ColliderSizeY);
-        character_collider2D.offset = new Vector2(character_collider2D.offset.x, usual_ColliderOffsetY);
+        if(character_Animator.GetBool("IsSlide")== false)
+        {
+            character_collider2D.size = new Vector2(character_collider2D.size.x, usual_ColliderSizeY);
+            character_collider2D.offset = new Vector2(character_collider2D.offset.x, usual_ColliderOffsetY);
+        }
     }
 
     public void onButtonDown_Attack()
