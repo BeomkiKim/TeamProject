@@ -7,18 +7,18 @@ public class DistanceBetweenCharcterAndMonster : MonoBehaviour
 {
     GameObject user;
     GameObject ghost;
-    GameObject distance;
+    
 
     void Start()
     {
-        this.user = GameObject.Find("user");
-        this.ghost = GameObject.Find("ghost");
-        this.distance = GameObject.Find("DistanceBetweenCharcterAndMonster");
+        this.user = GameObject.FindGameObjectWithTag("Player");
+        this.ghost = GameObject.FindGameObjectWithTag("Ghost");
     }
 
     void Update()
     {
         float length = this.user.transform.position.x - this.ghost.transform.position.x;
-        this.distance.GetComponent<Text>().text = length.ToString("F2") + "m";
+        float lenght_Int = (int)length;
+        this.GetComponent<Text>().text = lenght_Int.ToString() + "m";
     }
 }

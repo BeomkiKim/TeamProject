@@ -8,6 +8,7 @@ TagManager:
   - Monster
   - Trap
   - Wall
+  - Ghost
   layers:
   - Default
   - TransparentFX
