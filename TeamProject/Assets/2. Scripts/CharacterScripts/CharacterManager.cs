@@ -77,6 +77,7 @@ public class CharacterManager : MonoBehaviour
         OnJumpInGround();
         HurtEnding();
         Rushdeceleration();
+        Falling_Death();
     }
 
     private void FixedUpdate()
@@ -86,6 +87,9 @@ public class CharacterManager : MonoBehaviour
 
     public void OnPointerDown_Slide()
     {
+        if (GameOverScript.instance.is_gameOver == true)
+            return;
+
         character_Animator.SetBool("IsSlide", true);
         character_collider2D.size = new Vector2(character_collider2D.size.x, usual_ColliderSizeY/2);
         character_collider2D.offset = new Vector2(character_collider2D.offset.x, usual_ColliderOffsetY/2);
@@ -93,7 +97,10 @@ public class CharacterManager : MonoBehaviour
     }
 
     public void OnPointerUp_Slide()
-    { 
+    {
+        if (GameOverScript.instance.is_gameOver == true)
+            return;
+
         character_Animator.SetBool("IsSlide", false);
         character_collider2D.size = new Vector2(character_collider2D.size.x, usual_ColliderSizeY);
         character_collider2D.offset = new Vector2(character_collider2D.offset.x, usual_ColliderOffsetY);
@@ -101,11 +108,17 @@ public class CharacterManager : MonoBehaviour
 
     public void onButtonDown_Attack()
     {
+        if (GameOverScript.instance.is_gameOver == true)
+            return;
+
         character_Animator.SetBool("IsAttack", true);
     }
 
     public void AttackEnding()
     {
+        if (GameOverScript.instance.is_gameOver == true)
+            return;
+
         if (character_Animator.GetCurrentAnimatorStateInfo(0).IsName("HeroKnight_Attack3"))
         {
             character_Animator.SetBool("IsAttack", false);
@@ -114,6 +127,9 @@ public class CharacterManager : MonoBehaviour
 
     public void HurtEnding()
     {
+        if (GameOverScript.instance.is_gameOver == true)
+            return;
+
         if (character_Animator.GetCurrentAnimatorStateInfo(0).IsName("HeroKnight_Hurt"))
         {
             character_Animator.SetBool("IsHurt", false);
@@ -122,7 +138,10 @@ public class CharacterManager : MonoBehaviour
 
     public void onButtonDown_Jump()
     {
-        
+        if (GameOverScript.instance.is_gameOver == true)
+            return;
+
+
         if (is_Ground == true)
         {
             Debug.Log("Jump");
@@ -134,8 +153,11 @@ public class CharacterManager : MonoBehaviour
 
     void OnJumpInGround()
     {
+        if (GameOverScript.instance.is_gameOver == true)
+            return;
 
-        if(is_Ground ==true && character_Animator.GetBool("IsJumpUp") == true && is_Jump==true)
+
+        if (is_Ground ==true && character_Animator.GetBool("IsJumpUp") == true && is_Jump==true)
         {
             Debug.Log("Down");
             character_Animator.SetBool("IsJumpUp", false);
@@ -156,11 +178,17 @@ public class CharacterManager : MonoBehaviour
 
     public void Character_Rush()
     {
+        if (GameOverScript.instance.is_gameOver == true)
+            return;
+
         character_Rb.velocity = new Vector3(rushSpeed, character_Rb.velocity.y, 0);
     }
 
     void Rushdeceleration()
     {
+        if (GameOverScript.instance.is_gameOver == true)
+            return;
+
         if (is_Hurt == false)
             return;
 
@@ -184,6 +212,15 @@ public class CharacterManager : MonoBehaviour
             InvokeRepeating("IncreaseSpeed", 1f, 1f);
         }
 
+    }
+
+    void Falling_Death()
+    {
+        float death_Height = -11f;
+        if(character.transform.position.y<death_Height)
+        {
+            GameOverScript.instance.is_gameOver = true;
+        }
     }
 
     public bool GetIs_Ground()
