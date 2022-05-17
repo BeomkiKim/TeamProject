@@ -63,14 +63,9 @@ public class UI_Manager_Script : MonoBehaviour
         GameIsPaused = true;
     }
 
-    public void BgmButton()
+    public void ReplayButton()
     {
-
-    }
-
-    public void Sound_EffectButton()
-    {
-
+        SceneManager.LoadScene(1);
     }
 
     public void Game_ResetButton()
