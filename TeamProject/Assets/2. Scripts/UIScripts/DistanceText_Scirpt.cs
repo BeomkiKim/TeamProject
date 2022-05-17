@@ -11,6 +11,8 @@ public class DistanceText_Scirpt : MonoBehaviour
     [SerializeField]
     private Text distance_Text;
 
+    public int distance;
+
 
     public void FixedUpdate()
     {
@@ -22,5 +24,6 @@ public class DistanceText_Scirpt : MonoBehaviour
         float distance_Shame = character.transform.position.x+4f;
         int distance_Shame_Int = (int)distance_Shame;
         distance_Text.text = distance_Shame_Int.ToString() + "m";
+        distance = (int)distance_Shame;
     }
 }
