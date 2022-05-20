@@ -20,7 +20,7 @@ public class LevelGenerator : MonoBehaviour
         if(collision.tag == "Player")
         {
             patternNum = Random.Range(0, pattern.Length);
-            SpawnLevelPart(new Vector3(gameObject.transform.position.x + 39.5f, 0));
+            SpawnLevelPart(new Vector3(gameObject.transform.position.x + 43.0f, 0));
         }
     }
 
