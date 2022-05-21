@@ -22,6 +22,15 @@ public class HurtScript : MonoBehaviour
             CharacterManager.instance.SetIsHurt(true);
         }
 
+        if(collision.tag == "Trap")
+        {
+            CharacterManager.instance.character_Animator.SetBool("IsHurt", true);
+            CharacterManager.instance.SetPrensentRushSpeed(CharacterManager.instance.GetRushSpeed());
+            CharacterManager.instance.SetRushSpeed(CharacterManager.instance.GetRushSpeed() / 2);
+            CharacterManager.instance.SetHurtSpeed(CharacterManager.instance.GetRushSpeed() / 2);
+            CharacterManager.instance.SetIsHurt(true);
+        }
+
 
     }
 

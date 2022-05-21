@@ -326,7 +326,6 @@ GameObject:
   - component: {fileID: 1163129095815939208}
   - component: {fileID: 3974178319105355688}
   - component: {fileID: 4205543057741363046}
-  - component: {fileID: 1882092610}
   m_Layer: 0
   m_Name: Hero_ Range
   m_TagString: Untagged
@@ -425,16 +424,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1882092610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9131088842187315910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e213b0322c6cea4992f2d34de7fae0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  character: {fileID: 6323719953710832613}

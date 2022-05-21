@@ -13,5 +13,6 @@ public class JumpSensor : MonoBehaviour
     public void JumpStart()
     {
         characterManager.SetIs_Jump(true);
+        
     }
 }
