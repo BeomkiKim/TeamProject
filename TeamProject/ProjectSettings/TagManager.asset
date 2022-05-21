@@ -7,7 +7,6 @@ TagManager:
   - Ground
   - Monster
   - Trap
-  - Wall
   - Ghost
   layers:
   - Default
