@@ -7,52 +7,29 @@ using UnityEngine.Audio;
 
 public class UI_Sound : MonoBehaviour
 {
-    public Text message;
-    public Text result;
-    public Slider slider;
-    public Toggle toggle;
+    AudioSource audiosource;
+    public AudioMixer mixer;
+    
+    public void BGMSetLevel(float sliderVal) {
+        mixer.SetFloat("BGM", Mathf.Log10(sliderVal)*20);
+    }
 
-    private int min = 0;
-    private int max = 100;
+    public void SoundEffectSetLevel(float sliderVal)
+    {
+        mixer.SetFloat("SoundEffect", Mathf.Log10(sliderVal) * 20);
+    }
 
     void Start()
     {
-        SetFunction_UI();
+        audiosource = GetComponent<AudioSource>();
     }
 
-    void Update()
+    public void MutePush()
     {
-        
-    }
-
-    private void SetFunction_UI()
-    {
-        //Reset
-        ResetFunction_UI();
-
-        toggle.onValueChanged.AddListener(Function_Toggle);
-        slider.onValueChanged.AddListener(Function_Slider);
+      if (audiosource.mute)
+            audiosource.mute = false;
+      else
+            audiosource.mute = true;
 
     }
-
-    private void Function_Toggle(bool _bool)
-    {
-        message.text = "Toggle Click!\n" + _bool;
-        Debug.Log("Toggle Click!\n" + _bool);
-    }
-    private void Function_Slider(float _value)
-    {
-        message.text = _value.ToString();
-        Debug.Log("Slider Dragging!\n" + _value);
-    }
-
-    private void ResetFunction_UI()
-    {
-        toggle.onValueChanged.RemoveAllListeners();
-        slider.onValueChanged.RemoveAllListeners();
-        slider.maxValue = max;
-        slider.minValue = min;
-        slider.wholeNumbers = true;
-    }
-
 }

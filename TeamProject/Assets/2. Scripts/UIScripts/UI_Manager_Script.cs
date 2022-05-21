@@ -11,7 +11,7 @@ public class UI_Manager_Script : MonoBehaviour
 
     void Start()
     {
-        Time.timeScale = 0.0f;
+        Time.timeScale = 1.0f;
         GameIsPaused = true;
     }
 
@@ -68,10 +68,6 @@ public class UI_Manager_Script : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void Game_ResetButton()
-    {
-
-    }
 }
 
 //외부참조
