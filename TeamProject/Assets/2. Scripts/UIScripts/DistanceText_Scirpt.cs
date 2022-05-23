@@ -16,6 +16,8 @@ public class DistanceText_Scirpt : MonoBehaviour
     GameObject user;
     GameObject ghost;
 
+    public bool isCurrentDistance;
+
     private void Start()
     {
         this.user = GameObject.FindGameObjectWithTag("Player");
@@ -42,6 +44,9 @@ public class DistanceText_Scirpt : MonoBehaviour
 
     void GetCloseTwo()
     {
+        if (isCurrentDistance == true)
+            return;
+
         float length = this.user.transform.position.x - this.ghost.transform.position.x;
         float lenght_Int = (int)length;
         if(lenght_Int<4)

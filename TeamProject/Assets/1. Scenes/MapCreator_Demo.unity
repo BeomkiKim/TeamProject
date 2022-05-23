@@ -1276,6 +1276,7 @@ MonoBehaviour:
   character: {fileID: 1164922109}
   distance_Text: {fileID: 1944007944}
   distance: 0
+  isCurrentDistance: 0
 --- !u!1 &160656546
 GameObject:
   m_ObjectHideFlags: 0
@@ -8919,6 +8920,7 @@ MonoBehaviour:
   character: {fileID: 1164922109}
   distance_Text: {fileID: 1354285795}
   distance: 0
+  isCurrentDistance: 1
 --- !u!1 &1365705118
 GameObject:
   m_ObjectHideFlags: 0
@@ -12296,6 +12298,7 @@ MonoBehaviour:
   character: {fileID: 1164922109}
   distance_Text: {fileID: 1006412648}
   distance: 0
+  isCurrentDistance: 0
 --- !u!1 &1845975871
 GameObject:
   m_ObjectHideFlags: 0
