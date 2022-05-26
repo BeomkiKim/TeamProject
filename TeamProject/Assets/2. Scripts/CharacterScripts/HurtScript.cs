@@ -31,9 +31,38 @@ public class HurtScript : MonoBehaviour
             CharacterManager.instance.SetIsHurt(true);
         }
 
+        if (CharacterManager.instance.character_Animator.GetBool("IsSlide") == true)
+            return;
+
+        if (collision.tag == "Wall")
+        {
+            CharacterManager.instance.character_Animator.SetBool("IsHurt", true);
+            CharacterManager.instance.SetPrensentRushSpeed(CharacterManager.instance.GetRushSpeed());
+            CharacterManager.instance.SetRushSpeed(CharacterManager.instance.GetRushSpeed() / 2);
+            CharacterManager.instance.SetHurtSpeed(CharacterManager.instance.GetRushSpeed() / 2);
+            CharacterManager.instance.SetIsHurt(true);
+        }
 
     }
 
-    
-    
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (CharacterManager.instance.GetIs_Hurt() == true)
+            return;
+
+        if (CharacterManager.instance.character_Animator.GetBool("IsSlide") == true)
+            return;
+
+        if (collision.tag == "Wall")
+        {
+            CharacterManager.instance.character_Animator.SetBool("IsHurt", true);
+            CharacterManager.instance.SetPrensentRushSpeed(CharacterManager.instance.GetRushSpeed());
+            CharacterManager.instance.SetRushSpeed(CharacterManager.instance.GetRushSpeed() / 2);
+            CharacterManager.instance.SetHurtSpeed(CharacterManager.instance.GetRushSpeed() / 2);
+            CharacterManager.instance.SetIsHurt(true);
+        }
+    }
+
+
+
 }
