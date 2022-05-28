@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class UI_Manager_Script : MonoBehaviour
 {
-    public static bool GameIsPaused = false; 
-    public GameObject pauseMenuCanvas;
+    public static bool GameIsPaused = false;
 
     void Start()
     {
@@ -22,14 +21,12 @@ public class UI_Manager_Script : MonoBehaviour
 
     public void Pause() 
     { 
-        //pauseMenuCanvas.SetActive(true); 
         Time.timeScale = 0.0f; 
         GameIsPaused = true; 
     }
 
     public void Resume() 
     { 
-        //pauseMenuCanvas.SetActive(false); 
         Time.timeScale = 1.0f; 
         GameIsPaused = false; 
     }

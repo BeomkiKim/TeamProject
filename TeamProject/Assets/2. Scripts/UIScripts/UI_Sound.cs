@@ -26,10 +26,14 @@ public class UI_Sound : MonoBehaviour
 
     public void MutePush()
     {
-      if (audiosource.mute)
+        if (audiosource.mute)
+        {
             audiosource.mute = false;
-      else
+        }
+        else
+        {
             audiosource.mute = true;
+        }
 
     }
 }
