@@ -4,32 +4,47 @@ using UnityEngine;
 
 public class UI_Unit_Sound : MonoBehaviour
 {
-    private AudioSource audioSource;
-    private GameObject[] Sound;
+    private AudioSource music;
+    //private GameObject[] Sound;
+    public static UI_Unit_Sound Instance;
 
     private void Awake()
     {
-        Sound = GameObject.FindGameObjectsWithTag("Sound");
+        //Sound = GameObject.FindGameObjectsWithTag("Sound");
 
-        if (Sound.Length >= 2)
+        //if (Sound.Length >= 2)
+        //{
+        //    Destroy(sound.gameObject);
+        //}
+
+        //DontDestroyOnLoad(transform.gameObject);
+        //audiosource = GetComponent<AudioSource>();
+
+        if(Instance != null)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
+            return;
         }
-
-        DontDestroyOnLoad(transform.gameObject);
-        audioSource = GetComponent<AudioSource>();
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
 
     }
 
     public void PlayMusic()
     {
-        if (audioSource.isPlaying)
-            return;
-        audioSource.Play();
+        if (Instance == null)
+            music = gameObject.GetComponent<AudioSource>();
+        else
+            music = Instance.GetComponent<AudioSource>();
+        music.enabled = true;
     }
 
     public void StopMusic()
     {
-        audioSource.Stop();
+        if (Instance == null)
+            music = gameObject.GetComponent<AudioSource>();
+        else
+            music = Instance.GetComponent<AudioSource>();
+        music.enabled = false;
     }
 }

@@ -62,10 +62,11 @@ public class UI_Manager_Script : MonoBehaviour
 
     public void ReplayButton()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }
 
 //외부참조
 //https://husk321.tistory.com/107 [껍데기방]
+//[출처] Unity에서 게임의 restart기능 추가하기| 작성자 늘푸른 하늘은 빛나

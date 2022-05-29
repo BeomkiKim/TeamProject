@@ -7,10 +7,11 @@ using UnityEngine.Audio;
 
 public class UI_Sound : MonoBehaviour
 {
-    AudioSource audiosource;
+    AudioSource sound;
     public AudioMixer mixer;
-    
-    public void BGMSetLevel(float sliderVal) {
+
+    public void BGMSetLevel(float sliderVal) 
+    {
         mixer.SetFloat("BGM", Mathf.Log10(sliderVal)*20);
     }
 
@@ -21,18 +22,18 @@ public class UI_Sound : MonoBehaviour
 
     void Start()
     {
-        audiosource = GetComponent<AudioSource>();
+        sound = GetComponent<AudioSource>();
     }
 
     public void MutePush()
     {
-        if (audiosource.mute)
+        if (sound.mute)
         {
-            audiosource.mute = false;
+            sound.mute = false;
         }
         else
         {
-            audiosource.mute = true;
+            sound.mute = true;
         }
 
     }
