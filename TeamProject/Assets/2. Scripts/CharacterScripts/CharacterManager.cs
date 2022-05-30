@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Audio;
 
 public class CharacterManager : MonoBehaviour
 {
@@ -30,6 +31,10 @@ public class CharacterManager : MonoBehaviour
     bool is_Jump = false;
     public bool is_Hurt;
     bool is_HurtSpeed = false;
+
+    public AudioSource soundEffectSource;
+    public AudioClip slide_AudioClip;
+    public AudioClip hurt_AudioClip;
 
     private static CharacterManager _instance;
 
@@ -95,6 +100,9 @@ public class CharacterManager : MonoBehaviour
         {
             character_collider2D.size = new Vector2(character_collider2D.size.x, usual_ColliderSizeY / 2);
             character_collider2D.offset = new Vector2(character_collider2D.offset.x, usual_ColliderOffsetY / 2);
+            soundEffectSource.loop = true;
+            soundEffectSource.clip = slide_AudioClip;
+            soundEffectSource.Play();
         }
         
     }
@@ -109,6 +117,7 @@ public class CharacterManager : MonoBehaviour
         {
             character_collider2D.size = new Vector2(character_collider2D.size.x, usual_ColliderSizeY);
             character_collider2D.offset = new Vector2(character_collider2D.offset.x, usual_ColliderOffsetY);
+            soundEffectSource.loop = false;
         }
     }
 

@@ -1635,6 +1635,9 @@ MonoBehaviour:
   usual_ColliderSizeY: 0
   usual_ColliderOffsetY: 0
   is_Hurt: 0
+  soundEffectSource: {fileID: 1514933840}
+  slide_AudioClip: {fileID: 8300000, guid: 45627100ab5be394da1a88c3f2555278, type: 3}
+  hurt_AudioClip: {fileID: 8300000, guid: 465a80fa14eea7848b7816b5c51bc041, type: 3}
 --- !u!4 &265832266
 Transform:
   m_ObjectHideFlags: 0
@@ -4179,7 +4182,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 13ada35eb48085044a08d79bc8f4e617, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: 4fd5f8e74c5eb314598b53501c7a3a35, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -12359,19 +12362,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1835844242}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1514933840}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: b3dd68d88364abf4389af53eb3bd1371, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1835844242
 MonoBehaviour:
   m_ObjectHideFlags: 0

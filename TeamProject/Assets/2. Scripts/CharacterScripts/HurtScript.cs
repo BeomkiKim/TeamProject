@@ -6,7 +6,7 @@ public class HurtScript : MonoBehaviour
 {
     [SerializeField]
     GameObject character;
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (CharacterManager.instance.GetIs_Hurt() == true)
@@ -20,6 +20,8 @@ public class HurtScript : MonoBehaviour
             CharacterManager.instance.SetRushSpeed(CharacterManager.instance.GetRushSpeed() / 2);
             CharacterManager.instance.SetHurtSpeed(CharacterManager.instance.GetRushSpeed() / 2);
             CharacterManager.instance.SetIsHurt(true);
+            CharacterManager.instance.soundEffectSource.clip = CharacterManager.instance.hurt_AudioClip;
+            CharacterManager.instance.soundEffectSource.Play();
         }
 
         if(collision.tag == "Trap")
@@ -29,6 +31,8 @@ public class HurtScript : MonoBehaviour
             CharacterManager.instance.SetRushSpeed(CharacterManager.instance.GetRushSpeed() / 2);
             CharacterManager.instance.SetHurtSpeed(CharacterManager.instance.GetRushSpeed() / 2);
             CharacterManager.instance.SetIsHurt(true);
+            CharacterManager.instance.soundEffectSource.clip = CharacterManager.instance.hurt_AudioClip;
+            CharacterManager.instance.soundEffectSource.Play();
         }
 
         if (CharacterManager.instance.character_Animator.GetBool("IsSlide") == true)
@@ -41,6 +45,8 @@ public class HurtScript : MonoBehaviour
             CharacterManager.instance.SetRushSpeed(CharacterManager.instance.GetRushSpeed() / 2);
             CharacterManager.instance.SetHurtSpeed(CharacterManager.instance.GetRushSpeed() / 2);
             CharacterManager.instance.SetIsHurt(true);
+            CharacterManager.instance.soundEffectSource.clip = CharacterManager.instance.hurt_AudioClip;
+            CharacterManager.instance.soundEffectSource.Play();
         }
 
     }
@@ -60,6 +66,8 @@ public class HurtScript : MonoBehaviour
             CharacterManager.instance.SetRushSpeed(CharacterManager.instance.GetRushSpeed() / 2);
             CharacterManager.instance.SetHurtSpeed(CharacterManager.instance.GetRushSpeed() / 2);
             CharacterManager.instance.SetIsHurt(true);
+            CharacterManager.instance.soundEffectSource.clip = CharacterManager.instance.hurt_AudioClip;
+            CharacterManager.instance.soundEffectSource.Play();
         }
     }
 
