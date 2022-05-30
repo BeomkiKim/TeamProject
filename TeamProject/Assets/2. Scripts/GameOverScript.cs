@@ -54,6 +54,5 @@ public class GameOverScript : MonoBehaviour
         gameOverPopup.SetActive(true);
         CancelInvoke("Increase_HurtSpeed");
         CancelInvoke("IncreaseSpeed");
-
     }
 }
