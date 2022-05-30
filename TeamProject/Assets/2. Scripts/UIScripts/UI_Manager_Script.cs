@@ -22,7 +22,7 @@ public class UI_Manager_Script : MonoBehaviour
     public void Pause() 
     { 
         Time.timeScale = 0.0f; 
-        GameIsPaused = true; 
+        GameIsPaused = true;
     }
 
     public void Resume() 

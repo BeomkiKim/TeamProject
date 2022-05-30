@@ -30,6 +30,8 @@ public class UI_Sound : MonoBehaviour
         if (sound.mute)
         {
             sound.mute = false;
+            AudioSource MutePush = GetComponent<AudioSource>();
+            MutePush.Play();
         }
         else
         {
