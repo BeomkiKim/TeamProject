@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1008731758669042026}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.39, y: -0.39999998, z: 10}
+  m_LocalPosition: {x: 20, y: -0.39999998, z: 10}
   m_LocalScale: {x: 1.05, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8837476639322564168}
@@ -107,7 +107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319692219887095092}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.42, y: -0.4, z: 10}
+  m_LocalPosition: {x: 0, y: -0.4, z: 11}
   m_LocalScale: {x: 1.05, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8837476639322564168}
@@ -191,7 +191,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4923550086857352484}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: -3.78, z: -1.6204374}
+  m_LocalPosition: {x: -2.2, y: -3.78, z: -1.6204374}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8837476639322564168}
@@ -799,8 +799,8 @@ Tilemap:
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -9, y: -5, z: 0}
-  m_Size: {x: 40, y: 5, z: 1}
+  m_Origin: {x: -15, y: -5, z: 0}
+  m_Size: {x: 46, y: 5, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -926,14 +926,6 @@ CompositeCollider2D:
   - m_Collider: {fileID: 6266769351250195500}
     m_ColliderPaths:
     - - X: 269999900
-        Y: -39999959
-      - X: 269999900
-        Y: -40000000
-      - X: -90000000
-        Y: -40000000
-      - X: -90000000
-        Y: -50000000
-      - X: 269999900
         Y: -50000000
       - X: 269999900
         Y: -50000041
@@ -949,12 +941,20 @@ CompositeCollider2D:
         Y: -39999900
       - X: 269999959
         Y: -39999900
+      - X: 269999900
+        Y: -39999959
+      - X: 269999900
+        Y: -40000000
+      - X: -89999900
+        Y: -40000000
+      - X: -89999900
+        Y: -50000000
   m_CompositePaths:
     m_Paths:
     - - {x: 30.999975, y: -5.00001}
       - {x: 30.999975, y: -3.99999}
-      - {x: -9, y: -4.000029}
-      - {x: -8.99997, y: -5}
+      - {x: -8.99999, y: -4.000029}
+      - {x: -8.999961, y: -5}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!1 &8837476639791094844

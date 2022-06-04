@@ -1224,11 +1224,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1ec51250ff51c64594b407bf693a917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stage1Max: 126.5
-  stage2Max: 230
+  stage1Max: 60
+  stage2Max: 120
   bgm:
   - {fileID: 928590425}
   - {fileID: 1548703697}
+  time: 0
+  fadeTime: 0.25
   gameTime: 0
   level: 0
 --- !u!1 &154994721
@@ -5436,7 +5438,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
