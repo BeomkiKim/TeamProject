@@ -19,7 +19,7 @@ public class CharacterManager : MonoBehaviour
 
     float jumpPower = 25f;
     public float rushSpeed = 5f;
-    float add_RushSpeed = 0.05f; //초마다 증가 
+    float add_RushSpeed = 0.01f; //초마다 증가 
     public float hurtSpeed;
     public float presentRushSpeed;
     public float usual_ColliderSizeY;

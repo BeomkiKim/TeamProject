@@ -10,7 +10,7 @@ public class GhostManager : MonoBehaviour
     Rigidbody2D ghost_Rb;
 
     float rushSpeed = 3f;
-    float add_RushSpeed = 0.06f;
+    float add_RushSpeed = 0.03f;
 
     private void Start()
     {
