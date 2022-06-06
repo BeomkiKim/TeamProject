@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,13 +20,14 @@ public class AudioManagerTutorial : MonoBehaviour
 
         if(firstPlayInt == 0)
         {
-            backgroundFloat = 0.125f;
+            backgroundFloat = 0.5f;
             soundEffectsFloat = 0.75f;
             backgroundSlider.value = backgroundFloat;
             soundEffectsSlider.value = soundEffectsFloat;
             PlayerPrefs.SetFloat(BackgroundPref, backgroundFloat);
             PlayerPrefs.SetFloat(SoundEffectPref, soundEffectsFloat);
             PlayerPrefs.SetInt(FirstPlay, -1);
+
         }
         else
         {
@@ -52,7 +54,8 @@ public class AudioManagerTutorial : MonoBehaviour
 
     public void UpdateSound()
     {
-        for(int i = 0; i<backgroundAudio.Length; i++)
+
+        for (int i = 0; i<backgroundAudio.Length; i++)
         {
             backgroundAudio[i].volume = backgroundSlider.value;
         }
