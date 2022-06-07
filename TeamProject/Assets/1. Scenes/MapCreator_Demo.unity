@@ -10623,6 +10623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_gameOver: 0
   gameOverPopup: {fileID: 1845975871}
+  death_Clip: {fileID: 8300000, guid: 8e2f08e289f5b124289f4810a3d93827, type: 3}
 --- !u!4 &1502754460
 Transform:
   m_ObjectHideFlags: 0
@@ -13561,7 +13562,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845975871}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7240966288266657950, guid: d9bf68845561e704697a6d47dd602989, type: 2}
   m_audioClip: {fileID: 8300000, guid: 8e2f08e289f5b124289f4810a3d93827, type: 3}

@@ -8,6 +8,8 @@ public class GameOverScript : MonoBehaviour
 
     public GameObject gameOverPopup;
 
+    public AudioClip death_Clip;
+
     private static GameOverScript _instance;
     public static GameOverScript instance
     {
@@ -50,6 +52,10 @@ public class GameOverScript : MonoBehaviour
     {
         if (is_gameOver == false)
             return;
+
+        CharacterManager.instance.soundEffectSource.loop = false;
+        CharacterManager.instance.soundEffectSource.clip = death_Clip;
+        CharacterManager.instance.soundEffectSource.Play();
 
         gameOverPopup.SetActive(true);
         CancelInvoke("Increase_HurtSpeed");
