@@ -8,11 +8,20 @@ public class AudioManagerTutorial : MonoBehaviour
     private static readonly string BackgroundPref = "BackgroundPref";
     private static readonly string SoundEffectPref = "SoundEffectPref";
 
+    /*추가*/
+    private static readonly string BackgroundMutePref = "BackgroundMutePref";
+    private static readonly string SoundEffectMutePref = "SoundEffectMutePref";
+
+
     private int firstPlayInt;
     public Slider backgroundSlider, soundEffectsSlider;
     private float backgroundFloat, soundEffectsFloat;
     public AudioSource[] backgroundAudio;
     public AudioSource[] soundEffectAudio;
+
+    /*추가*/
+    public Toggle backgroundToggle, soundEffectsToggle;
+    private float backgroundInt, soundEffectsInt;
 
     void Start()
     {
@@ -28,6 +37,14 @@ public class AudioManagerTutorial : MonoBehaviour
             PlayerPrefs.SetFloat(SoundEffectPref, soundEffectsFloat);
             PlayerPrefs.SetInt(FirstPlay, -1);
 
+            //추가
+            backgroundInt = 1;
+            soundEffectsInt = 1;
+            backgroundToggle.isOn = Convert.ToBoolean(backgroundInt);
+            soundEffectsToggle.isOn = Convert.ToBoolean(soundEffectsInt);
+            PlayerPrefs.SetFloat(BackgroundMutePref, backgroundInt);
+            PlayerPrefs.SetFloat(SoundEffectMutePref, soundEffectsInt);
+
         }
         else
         {
@@ -35,6 +52,12 @@ public class AudioManagerTutorial : MonoBehaviour
           backgroundSlider.value = backgroundFloat;
           soundEffectsFloat = PlayerPrefs.GetFloat(SoundEffectPref);
           soundEffectsSlider.value = soundEffectsFloat;
+
+            //추가
+          backgroundInt = PlayerPrefs.GetFloat(BackgroundMutePref);
+          backgroundToggle.isOn = Convert.ToBoolean(backgroundInt);
+          soundEffectsInt = PlayerPrefs.GetFloat(SoundEffectMutePref);
+          soundEffectsToggle.isOn = Convert.ToBoolean(soundEffectsInt);
         }
     }
 
@@ -42,6 +65,10 @@ public class AudioManagerTutorial : MonoBehaviour
     {
         PlayerPrefs.SetFloat(BackgroundPref, backgroundSlider.value);
         PlayerPrefs.SetFloat(SoundEffectPref, soundEffectsSlider.value);
+
+        //추가
+        PlayerPrefs.SetFloat(BackgroundMutePref, Convert.ToSingle(backgroundToggle.isOn));
+        PlayerPrefs.SetFloat(SoundEffectMutePref, Convert.ToSingle(soundEffectsToggle.isOn));
     }
 
     void OnApplicationFocus(bool infocus)
@@ -58,11 +85,13 @@ public class AudioManagerTutorial : MonoBehaviour
         for (int i = 0; i<backgroundAudio.Length; i++)
         {
             backgroundAudio[i].volume = backgroundSlider.value;
+            backgroundAudio[i].mute = backgroundToggle.isOn;
         }
 
         for(int j = 0; j<soundEffectAudio.Length; j++)
         {
             soundEffectAudio[j].volume = soundEffectsSlider.value;
+            soundEffectAudio[j].mute = soundEffectsToggle.isOn;
         }
     }
 }

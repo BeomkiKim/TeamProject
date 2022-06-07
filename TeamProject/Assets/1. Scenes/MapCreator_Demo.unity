@@ -3530,6 +3530,8 @@ MonoBehaviour:
   - {fileID: 1548703700}
   soundEffectAudio:
   - {fileID: 1514933840}
+  backgroundToggle: {fileID: 1767115561}
+  soundEffectsToggle: {fileID: 999762004}
 --- !u!1 &586986462
 GameObject:
   m_ObjectHideFlags: 0
@@ -6197,9 +6199,9 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1514933841}
-        m_TargetAssemblyTypeName: UI_Sound, Assembly-CSharp
-        m_MethodName: MutePush
+      - m_Target: {fileID: 541753801}
+        m_TargetAssemblyTypeName: AudioManagerTutorial, Assembly-CSharp
+        m_MethodName: UpdateSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12527,9 +12529,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 928590427}
-        m_TargetAssemblyTypeName: UI_Sound, Assembly-CSharp
-        m_MethodName: MutePush
+      - m_Target: {fileID: 541753801}
+        m_TargetAssemblyTypeName: AudioManagerTutorial, Assembly-CSharp
+        m_MethodName: UpdateSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
