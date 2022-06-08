@@ -38,8 +38,8 @@ public class AudioManagerTutorial : MonoBehaviour
             PlayerPrefs.SetInt(FirstPlay, -1);
 
             //Ãß°¡
-            backgroundInt = 1;
-            soundEffectsInt = 1;
+            backgroundInt = 0;
+            soundEffectsInt = 0;
             backgroundToggle.isOn = Convert.ToBoolean(backgroundInt);
             soundEffectsToggle.isOn = Convert.ToBoolean(soundEffectsInt);
             PlayerPrefs.SetFloat(BackgroundMutePref, backgroundInt);

@@ -2,7 +2,11 @@
   <packages>
     <package>com.google.android.gms:play-services-ads:20.6.0</package>
   </packages>
-  <files />
+  <files>
+    <file>Assets/Plugins/Android/androidx.legacy.legacy-support-core-ui-1.0.0.aar</file>
+    <file>Assets/Plugins/Android/androidx.slidingpanelayout.slidingpanelayout-1.0.0.aar</file>
+    <file>Assets/Plugins/Android/com.google.android.gms.play-services-measurement-sdk-api-18.0.3.aar</file>
+  </files>
   <settings>
     <setting name="androidAbis" value="armeabi-v7a" />
     <setting name="bundleId" value="com.DefaultCompany.TeamProject" />

@@ -25,10 +25,10 @@ public class BottonBanner : MonoBehaviour
             string adUnitId = "unexpected_platform";
         #endif
 
-        AdSize adSize = new AdSize(468, 60);
+        //AdSize adSize = new AdSize(468, 60);
 
         // Create a 320x50 banner at the top of the screen.
-        this.bannerView = new BannerView(adUnitId, adSize, AdPosition.BottomLeft);
+        this.bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.BottomLeft);
 
         // Create an empty ad request.
         AdRequest request = new AdRequest.Builder().Build();
